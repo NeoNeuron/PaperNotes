@@ -12,3 +12,20 @@
 ## Slow excitation of reverberations: Role of NMDA receptors
 - Fast excitatory and slow inhibitory recurrent circuit would lead to a dynamical instability. While slow excitatory and fast inhibition mediated by NMDAR.
 - Sufficiently high NMDA/AMPA ratio would lead to a sustainable firing activity, while the actual ratio value depends on detailed biological structures.
+
+## Multiple feedback process
+Three other feedback processes which might participate the generation of persistent spiking activity are mentioned.
+1. Positive feedback in individual pyramidal neuron in terms of inducing intrinsic ion current to facilitate the depolarization of membrane potential. In this way, less slow NMDAR-mediated synaptic transmission is need to ensure stable persistent activity;
+2. In frontal cortex, local synaptic connections between pyramidal neuron pairs shows short-term facilitation in terms of short-term synaptic plasticity, which would persist the localized spiking activation for a certain time period.
+3. Depolarization-induced suppression of inhibition(DSI). With spike-frequency adaptation, spiking activities would trigger negative feedback process to reduce its firing rate. By introducing DSI, the negative feedback process would be reduced so that spiking activities would maintain for a while. Meanwhile, DSI reduces the noise-induced random drift of the persistent activity pattern.(Not explained in detail) In addition, the paper mentioned a simulated agonist for cannabinoid receptors, which has the opposite contribution compared with DSI.
+
+## Excitation-inhibition balance
+### Dynamic stability
+Basically, network has a fixed E-I balance regardless of its changing dynamic regime. Meanwhile, inhibition is slightly stronger than excitation.
+### Stimulus selectivity
+### Resistance against distractors
+Unlike in temporal lobe and parietal lobe, neurons in prefrontal cortex might persist spiking activities under external distracting inputs. One of the hypothesis is that active neurons in PFC recruit inhibition to suppress other neurons under the impact of distractors.
+### Synchronized network fast oscillations
+## Contributions of different gabaergic cell subtypes
+(Not read yet)
+## Decision making
