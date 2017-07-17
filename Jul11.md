@@ -21,7 +21,7 @@ Three other feedback processes which might participate the generation of persist
 
 ## Excitation-inhibition balance
 ### Dynamic stability
-Basically, network has a fixed E-I balance regardless of its changing dynamic regime. Meanwhile, inhibition is slightly stronger than excitation.
+Basically, network model has a fixed E-I balance regardless of its changing dynamic regime. Meanwhile, inhibition is slightly stronger than excitation.
 ### Stimulus selectivity
 ### Resistance against distractors
 Unlike in temporal lobe and parietal lobe, neurons in prefrontal cortex might persist spiking activities under external distracting inputs. One of the hypothesis is that active neurons in PFC recruit inhibition to suppress other neurons under the impact of distractors.
