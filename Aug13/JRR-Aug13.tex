@@ -1,0 +1,92 @@
+\documentclass{article}[12pt]
+
+%\documentclass[global]{svjour}
+
+\renewcommand{\baselinestretch}{1.3}
+%\usepackage{showkeys}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+%\usepackage[small,nohug,heads=vee]{diagrams}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{breqn}
+\usepackage{subfigure}
+\usepackage{float}
+%\usepackage{extarrows}
+%\usepackage[algo2e,linesnumbered,ruled]{algorithm2e}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage[colorlinks,linkcolor=blue,anchorcolor=green,citecolor=red]{hyperref}
+\usepackage[T1]{fontenc}
+\renewcommand{\rmdefault}{ptm}
+%\usepackage{helvet}
+%\usepackage{fourier}
+\usepackage{charter}
+%\usepackage{DejaVuSansMono}
+%\usepackage[expert]{mathdesign}
+
+\usepackage{fancyhdr}
+\usepackage{amscd}
+
+\usepackage{caption}
+\usepackage{algorithm} %format of the algorithm
+\usepackage{algorithmic} %format of the algorithm
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+%\newtheorem{algorithm}{Algorithm}
+
+\makeatletter
+%\@addtoreset{equation}{section}
+\makeatother
+
+\usepackage{geometry}
+\geometry{left=4cm,right=4cm,top=4cm,bottom=4cm}
+
+\begin{document}
+
+\title{Journal Reading Report}
+\author{Kyle Chen}
+\date{\today}
+
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+I read one article about application of mutual information on the analysis of functional connectivities.
+
+\section{Determination of relevant neuron-neuron connections using TDMI}\cite{Taghva2012}
+\subsection{Review}
+In this work, time-delayed mutual information(TDMI) is applied on the analysis of functional neuron-neuron connection based on both simulating experimental data. Compared with cross-correlation, they demonstrate the advantage of TDMI when dealing with negative and complex relationship. As for the neuronal data substituted into TDMI, binary time series of spiking events with specific binning stratagy is applied. Tests for optimizing binning size are operated. In addition, they proposed possibility of existence of underlying temporal structure behind the time lag of mutual information peak and optimial binning size.
+
+First of all, they introduced the coding stratagy of the binary spiking time series. As for the spiking series, "1" for one spiking event happens during the elemental time period, and otherwise for "0". For a bin with binning size, n, it has $2*n$ different possible combinitions. For intance, let $n=4$, there 16 conbinitions, from "0000" to "1111". TDMI and cross-correlation are calculated under such a binning stratagy. With the optimization tests based on experimental data, they found the optimal binning size lies on 40 ms, which might indicate the time scale of dynamics in rat's hippocampus.
+
+Based on the simulating data, they found the fact that TDMI and cross-correlation appears to be similar to each other when dealing with monotinic increasing or decreasing transformations. When facing complex transformation without direct tendency, cross-correlation fails while TDMI still works. On the other hand, they show that TDMI can reveal the small frameshift of singals even when the time scale of frameshift is smaller than binning size.
+
+As for the expermential part, they collect spike train of individual neurons in CA3 and CA1 in rat's hippocampus when rats are performing delayed non-match to sample tasks. Most information connecting parts appears to have time lag ranging from 0 to 20 ms within 99\% confidence interval. The experimental data show the difference between TDMI and cross-correlation within 99\% and 99.9\% confidence interval. However, when focusing on connecting pairs with physiologically plausible time-lag, ranging from 4 to 9 ms, TDMI and cross-correlation get the similar results, giving the primary conclusion that CA3/CA1 pairs share excitatory and monotonic connections. As for specific sample, connections with 4-10 ms time-lags can be identified by TDMI while cannot be found by cross-correlation.
+
+\subsection{Criticize}
+\begin{itemize}
+	\item The coding stratagy applied in this work was able to capture the local temporal structure of the dynamic of neuron. And the idea of finding optimal binning size does give insights towards the characteristic time scale of dynamics. Since optimization is performed based on auto-correlation, the optimal binning size stands for the optimal time window when investigate the time series.
+	\item During simulation, transformation with positively monotonic correlated, negatively monotonic correlated and complex mapping are discussed in this work. However, as for spiking neuronal dynamics, there are threshold liked behaviors and refractory periods, and would introduce different types of dynamics compared with direct mapping used in this work, which is more similar to the actually spiking dynamics processed in real neuron. I think these types of simulations would be more convincing if covered, since there are difference between simulating and experimental results.
+\end{itemize}
+
+\begin{thebibliography}{0}
+	\bibitem{Taghva2012}
+	Taghva, A., Song, D., Hampson, R. E., Deadwyler, S. A., \& Berger, T. W. (2012). Determination of Relevant Neuron–Neuron Connections for Neural Prosthetics Using Time-Delayed Mutual Information: Tutorial and Preliminary Results. World neurosurgery, 78(6), 618-630.
+\end{thebibliography}
+
+\end{document}
