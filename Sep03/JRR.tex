@@ -1,0 +1,97 @@
+\documentclass{article}[12pt]
+
+%\documentclass[global]{svjour}
+
+\renewcommand{\baselinestretch}{1.3}
+%\usepackage{showkeys}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+%\usepackage[small,nohug,heads=vee]{diagrams}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{breqn}
+\usepackage{subfigure}
+\usepackage{float}
+%\usepackage{extarrows}
+%\usepackage[algo2e,linesnumbered,ruled]{algorithm2e}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage[colorlinks,linkcolor=blue,anchorcolor=green,citecolor=red]{hyperref}
+\usepackage[T1]{fontenc}
+\renewcommand{\rmdefault}{ptm}
+%\usepackage{helvet}
+%\usepackage{fourier}
+\usepackage{charter}
+%\usepackage{DejaVuSansMono}
+%\usepackage[expert]{mathdesign}
+
+\usepackage{fancyhdr}
+\usepackage{amscd}
+
+\usepackage{caption}
+\usepackage{algorithm} %format of the algorithm
+\usepackage{algorithmic} %format of the algorithm
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+%\newtheorem{algorithm}{Algorithm}
+
+\makeatletter
+%\@addtoreset{equation}{section}
+\makeatother
+
+\usepackage{geometry}
+\geometry{left=4cm,right=4cm,top=4cm,bottom=4cm}
+
+\begin{document}
+
+\title{Journal Reading Report}
+\author{Kyle Chen}
+\date{\today}
+
+\maketitle
+\tableofcontents
+
+\section{Introduction}
+I read topics about applications of mutual information. First one is about stochastic resonance in threshold liked system, which is integrate and fire neuronal model.
+
+\section{Noise induced maximum mutual information}\cite{Taghva2012}
+\subsection{Review}
+This work applyed Shannon mutual information to study the stochastic resonance(SR) effect in generalized form. It focused on a threshold like system, integrate-and-fire model, and discussed the information transfor between input and output signal under different dynamical regime. In addition, they proposed that SR effect would only appear in particular system, such as neuronal populations since it would disappear with the optimal choise of model parameters, which is impractical in neural systems.
+
+The simplized version of the threshold like model in a binary communication channel is defined as below.
+$$y=\theta(x+n)$$
+\begin{equation*}
+	y = \\
+	\left\{\begin{aligned}
+	1&, if x+n > Q,\\
+	-1&, otherwise,
+	\end{aligned}\right
+\end{equation*}
+where x is a binary variable and n is the standard Gaussian white noise. $P(x = 1) = P_x$ and $P(x = 0) = 1 - P_x$.
+
+SR is the phenomenon that the addition of noise would incease the signal-to-noise ratio(SNR) when sampling the signal. This effect would happen when the signal is too weak to be detected through sensor as well as the system process certain amount of non-linearity. In IF model, denoting the threshold of neuronal membrane potential as Q, when $\mu\tau f << Q$, where $\mu$ is the mean rate of input signal, $\tau$ is the time constant of model and f is the strength of presynaptic signal, the neuron cannot fire unless it receives certaion amount of noise. Noise help it jump above the threshold.
+
+In the model of communication channel, IF $|Q|<1$, which means that neuron would fire when it receive a spike from the signal, maximum mutual information reachs with zero noise case. If $|Q|>1$, the maximum mutual information corresponds to a certain non-zero noise level. In addition, the value of maximum mutual information decrease as Q increases.
+
+At the end of the article, the relationship between input SNR and information rate, which defined as $RI(s(t), T)$, where R is the output firing rate, $s(t)$ is the input signal and T is the interspike interval(ISI) of output spike train.
+
+\begin{thebibliography}{0}
+	\bibitem{Taghva2012}
+	Taghva, A., Song, D., Hampson, R. E., Deadwyler, S. A., \& Berger, T. W. (2012). Determination of Relevant Neuron–Neuron Connections for Neural Prosthetics Using Time-Delayed Mutual Information: Tutorial and Preliminary Results. World neurosurgery, 78(6), 618-630.
+\end{thebibliography}
+
+\end{document}
